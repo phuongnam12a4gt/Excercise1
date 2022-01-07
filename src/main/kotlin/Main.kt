@@ -15,21 +15,21 @@ fun main(args: Array<String>) {
                     when (readLine()?.toInt()) {
                         1 -> {
                             val intern = Intern()
-                            intern.inputInformation()
+                            intern.inputInfo()
                             manager.addCandicate(intern)
                             Candidate.mCandidateCount++
                             b2 = false
                         }
                         2 -> {
                             val fresher = Fresher()
-                            fresher.inputInformation()
+                            fresher.inputInfo()
                             manager.addCandicate(fresher)
                             Candidate.mCandidateCount++
                             b2 = false
                         }
                         3 -> {
                             val experience = Experience()
-                            experience.inputInformation()
+                            experience.inputInfo()
                             manager.addCandicate(experience)
                             Candidate.mCandidateCount++
                             b2 = false

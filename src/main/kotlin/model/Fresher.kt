@@ -21,15 +21,8 @@ class Fresher : Candidate {
         )
     }
 
-    fun inputInformation() {
-        println(":Input CandicatedID")
-        this.mCandidateID = readLine().toString()
-        println("Input FullName:")
-        this.mFullName = readLine().toString()
-        println("Input BirthDay:")
-        this.mBirthDay = readLine().toString()
-        println("Input Phone:")
-        this.mPhone = readLine().toString()
+    override fun inputInfo() {
+        super.inputInfo()
         println("Input GraduationDate:")
         this.mGraduationDate = readLine().toString()
         println("Input Graduation Rank:")
@@ -39,7 +32,7 @@ class Fresher : Candidate {
         addCertificated()
     }
 
-    fun addCertificated() {
+    private fun addCertificated() {
         println("1.Input Certificated Count:")
         val sl = readLine()?.toInt()!!
         if (sl > 0) {

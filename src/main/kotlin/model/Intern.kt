@@ -8,7 +8,7 @@ class Intern() : Candidate() {
 
     override fun showInfo() {
         println(
-            "STT:${super.mCandidateID}," +
+            "CandidateID:${super.mCandidateID}," +
                     "FullName:${super.mFullName}," +
                     "BirthDay:${super.mBirthDay}," +
                     "mPhone:${super.mPhone}," +
@@ -20,22 +20,15 @@ class Intern() : Candidate() {
         showCertificated()
     }
 
-    fun showCertificated() {
+    private fun showCertificated() {
         for (i in 0 until mListCertificated.size) {
             println("Show Certificated:${i}")
             mListCertificated[0].showCertificated()
         }
     }
 
-    fun inputInformation() {
-        println(":Input CandicatedID")
-        this.mCandidateID = readLine().toString()
-        println("Input FullName:")
-        this.mFullName = readLine().toString()
-        println("Input BirthDay:")
-        this.mBirthDay = readLine().toString()
-        println("Input Phone:")
-        this.mPhone = readLine().toString()
+    override fun inputInfo() {
+        super.inputInfo()
         println("Input Major:")
         this.mMajor = readLine().toString()
         println("Input Semester:")
@@ -45,7 +38,7 @@ class Intern() : Candidate() {
         addCertificated()
     }
 
-    fun addCertificated() {
+    private fun addCertificated() {
         println("1.Input Certificated Count:")
         val sl = readLine()?.toInt()!!
         if (sl > 0) {

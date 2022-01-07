@@ -19,14 +19,8 @@ class Experience : Candidate {
         )
     }
 
-    fun inputInformation() {
-        println(":Input CandicatedID")
-        this.mCandidateID = readLine().toString()
-        println("Input FullName:")
-        this.mFullName = readLine().toString()
-        println("Input BirthDay:")
-        this.mBirthDay = readLine().toString()
-        println("Input Phone:")
+    override fun inputInfo() {
+        super.inputInfo()
         this.mPhone = readLine().toString()
         println("Input ExpInYear:")
         this.mExpInYear = readLine()?.toInt()!!
@@ -35,7 +29,7 @@ class Experience : Candidate {
         addCertificated()
     }
 
-    fun addCertificated() {
+    private fun addCertificated() {
         println("1.Input Certificated Count:")
         val sl = readLine()?.toInt()!!
         if (sl > 0) {
