@@ -36,14 +36,16 @@ class Fresher : Candidate {
         this.mGraduationRank = readLine().toString()
         println("Input Education:")
         this.mEducation = readLine().toString()
+        addCertificated()
     }
+
     fun addCertificated() {
         println("1.Input Certificated Count:")
         val sl = readLine()?.toInt()!!
         if (sl > 0) {
-            val certificated = Certificated()
-            certificated.inputCertificated()
             for (i in 1..sl) {
+                val certificated = Certificated()
+                certificated.inputCertificated()
                 mListCertificated.add(certificated)
             }
         }

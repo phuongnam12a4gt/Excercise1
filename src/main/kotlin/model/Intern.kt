@@ -17,6 +17,14 @@ class Intern() : Candidate() {
                     "Semester:${this.mSemester}," +
                     "University:${this.mUniversity}"
         )
+        showCertificated()
+    }
+
+    fun showCertificated() {
+        for (i in 0 until mListCertificated.size) {
+            println("Show Certificated:${i}")
+            mListCertificated[0].showCertificated()
+        }
     }
 
     fun inputInformation() {
@@ -41,9 +49,9 @@ class Intern() : Candidate() {
         println("1.Input Certificated Count:")
         val sl = readLine()?.toInt()!!
         if (sl > 0) {
-            val certificated = Certificated()
-            certificated.inputCertificated()
             for (i in 1..sl) {
+                val certificated = Certificated()
+                certificated.inputCertificated()
                 mListCertificated.add(certificated)
             }
         }

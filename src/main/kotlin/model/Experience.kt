@@ -15,7 +15,7 @@ class Experience : Candidate {
                     "mPhone:${super.mPhone}," +
                     "CandidateType:${super.mCandidateType}," +
                     "ExpInYear:${this.mExpInYear}," +
-                    "ProSkill:${this.mProSkill}"
+                    "ProSkill:${this.mProSkill}+"
         )
     }
 
@@ -39,9 +39,10 @@ class Experience : Candidate {
         println("1.Input Certificated Count:")
         val sl = readLine()?.toInt()!!
         if (sl > 0) {
-            val certificated = Certificated()
-            certificated.inputCertificated()
             for (i in 1..sl) {
+                println("Certificated:${i}")
+                val certificated = Certificated()
+                certificated.inputCertificated()
                 mListCertificated.add(certificated)
             }
         }
