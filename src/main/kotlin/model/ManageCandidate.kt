@@ -7,8 +7,8 @@ class ManageCandidate {
     }
 
     fun showAllCandidate() {
-        for (i in 0..list.size - 1) {
-            println("---------------------Show candidate 1-------------------------")
+        for (i in 0 until list.size) {
+            println("---------------------Show candidate ${i}-------------------------")
             list[i].showInfo()
         }
     }

@@ -10,6 +10,6 @@ abstract class Candidate() {
     abstract fun showInfo()
 
     companion object {
-        private var mCandidateCount: Int = 0
+        var mCandidateCount: Int = 0
     }
 }

@@ -1,14 +1,10 @@
 package model
 
-class Intern : Candidate {
+class Intern() : Candidate() {
     private var mMajor: String = ""
     private var mSemester: String = ""
     private var mUniversity: String = ""
-    override lateinit var mListCertificated: MutableList<Certificated>
-
-    constructor() {
-
-    }
+    override var mListCertificated: MutableList<Certificated> = mutableListOf()
 
     override fun showInfo() {
         println(
@@ -24,12 +20,6 @@ class Intern : Candidate {
     }
 
     fun inputInformation() {
-        println("Input Major:")
-        this.mMajor = readLine().toString()
-        println("Input Semester:")
-        this.mSemester = readLine().toString()
-        println("Input University:")
-        this.mUniversity = readLine().toString()
         println(":Input CandicatedID")
         this.mCandidateID = readLine().toString()
         println("Input FullName:")
@@ -38,5 +28,24 @@ class Intern : Candidate {
         this.mBirthDay = readLine().toString()
         println("Input Phone:")
         this.mPhone = readLine().toString()
+        println("Input Major:")
+        this.mMajor = readLine().toString()
+        println("Input Semester:")
+        this.mSemester = readLine().toString()
+        println("Input University:")
+        this.mUniversity = readLine().toString()
+        addCertificated()
+    }
+
+    fun addCertificated() {
+        println("1.Input Certificated Count:")
+        val sl = readLine()?.toInt()!!
+        if (sl > 0) {
+            val certificated = Certificated()
+            certificated.inputCertificated()
+            for (i in 1..sl) {
+                mListCertificated.add(certificated)
+            }
+        }
     }
 }
